@@ -1,0 +1,89 @@
+@startuml
+
+abstract class EPS{
+
+}
+
+abstract class Empleado extends EPS{
+    + nombre: String
+    + apellidos: String
+    + fecha_nac: String
+    + direccion: String
+    + email: String
+    + telefono: int
+}
+
+class Citas{
+
+}
+
+class Horarios{
+    
+}
+
+abstract class Administracion extends Empleado{
+
+}
+
+class Usuario extends EPS{
+    + nombre: String
+    + apellidos: String
+    + cedula: int
+    + fecha_nac: String
+    + telefono: int
+    + email: String
+}
+
+abstract class Secretaria extends Administracion{
+
+}
+
+abstract class Aseo extends Administracion{
+
+}
+
+
+abstract class Salud extends Empleado{
+
+}
+
+abstract class Medico extends Salud{
+    
+}
+
+class Medico_General extends Medico{
+    
+}
+
+abstract class Especialista extends Medico{
+    + especialidad: String
+    + facultad: String
+    + lugar_especializacion: String
+    + tiempo: int
+}
+
+abstract class Asistencia{
+
+}
+
+Asistencia -right-|> Salud
+
+class Enfermeros{
+
+}
+
+Enfermeros -down-|> Asistencia
+
+class Auxiliares{
+
+}
+
+Auxiliares -up-|> Asistencia
+
+class Fisioterapeutas{
+
+}
+
+Fisioterapeutas -up-|> Asistencia
+
+@enduml  
